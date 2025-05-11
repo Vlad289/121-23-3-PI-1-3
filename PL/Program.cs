@@ -1,4 +1,5 @@
 ﻿using DAL;
+using Microsoft.EntityFrameworkCore;
 
 namespace PL
 {
@@ -6,24 +7,14 @@ namespace PL
     {
         static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
+            var optionsBuilder = new DbContextOptionsBuilder<OnlineShopDbContext>();
+            optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=OnlineShopDb;Trusted_Connection=True;TrustServerCertificate=True;");
 
-            // 👉 ТУТ додаємо контекст БД
-            builder.Services.AddDbContext<OnlineShopDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            using var context = new OnlineShopDbContext(optionsBuilder.Options);
 
-            // інші сервіси
-            builder.Services.AddControllers(); // якщо це API
+            context.Database.Migrate(); // замість EnsureCreated
 
-            var app = builder.Build();
-
-            // конфігурація маршрутизації
-            app.UseAuthorization();
-            app.MapControllers();
-
-            app.Run();
-
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Міграції застосовано. База даних готова.");
         }
     }
 }
