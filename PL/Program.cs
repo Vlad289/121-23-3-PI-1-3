@@ -8,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using PL.Controllers;
 using PL.UI;
 using System;
+using AutoMapper;
+using BLL.Mappings;
 
 namespace PL
 {
@@ -31,17 +33,17 @@ namespace PL
             services.AddDbContext<OnlineShopDbContext>(options =>
                 options.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=OnlineShopDb;Trusted_Connection=True;TrustServerCertificate=True;"));
 
-            // Register repositories
-            services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped<IOrderRepository, OrderRepository>();
-            services.AddScoped<IOrderItemRepository, OrderItemRepository>();
+            // Register UnitOfWork instead of individual repositories
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            // Register services
-            services.AddScoped<IUserService, UserService>();
+            // Register AutoMapper
+            services.AddAutoMapper(typeof(MappingProfile));
+
+            // Register services in the correct order (note ProductService needs to be registered before OrderItemService)
             services.AddScoped<IProductService, ProductService>();
-            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IUserService, UserService>();
             services.AddScoped<IOrderItemService, OrderItemService>();
+            services.AddScoped<IOrderService, OrderService>();
 
             // Register controllers
             services.AddScoped<UserController>();

@@ -204,18 +204,18 @@ namespace PL.UI
                 // Display available products
                 var products = await _productController.GetAllProductsAsync();
                 Console.WriteLine("\nAvailable Products:");
-                foreach (var product in products)
+                foreach (var productItem in products)
                 {
-                    Console.WriteLine($"ID: {product.Id}, Name: {product.Name}, Price: ${product.Price}, In Stock: {product.Quantity}");
+                    Console.WriteLine($"ID: {productItem.Id}, Name: {productItem.Name}, Price: ${productItem.Price}, In Stock: {productItem.Quantity}");
                 }
 
                 int productId = GetIntInput("\nEnter Product ID: ", 1);
 
                 // Verify product exists and get details
-                ProductDto product;
+                ProductDto selectedProduct;
                 try
                 {
-                    product = await _productController.GetProductByIdAsync(productId);
+                    selectedProduct = await _productController.GetProductByIdAsync(productId);
                 }
                 catch (EntityNotFoundException)
                 {
@@ -223,15 +223,15 @@ namespace PL.UI
                     continue;
                 }
 
-                int quantity = GetIntInput($"Enter quantity (max {product.Quantity}): ", 1, product.Quantity);
+                int quantity = GetIntInput($"Enter quantity (max {selectedProduct.Quantity}): ", 1, selectedProduct.Quantity);
 
                 // Add item to order
                 orderDto.Items.Add(new OrderItemDto
                 {
                     ProductId = productId,
-                    ProductName = product.Name,
+                    ProductName = selectedProduct.Name,
                     Quantity = quantity,
-                    Price = product.Price
+                    Price = selectedProduct.Price
                 });
 
                 addMoreItems = GetConfirmation("Do you want to add more items?");
@@ -260,18 +260,18 @@ namespace PL.UI
                 // Display available products
                 var products = await _productController.GetAllProductsAsync();
                 Console.WriteLine("\nAvailable Products:");
-                foreach (var product in products)
+                foreach (var productItem in products)
                 {
-                    Console.WriteLine($"ID: {product.Id}, Name: {product.Name}, Price: ${product.Price}, In Stock: {product.Quantity}");
+                    Console.WriteLine($"ID: {productItem.Id}, Name: {productItem.Name}, Price: ${productItem.Price}, In Stock: {productItem.Quantity}");
                 }
 
                 int productId = GetIntInput("\nEnter Product ID: ", 1);
 
                 // Verify product exists and get details
-                ProductDto product;
+                ProductDto selectedProduct;
                 try
                 {
-                    product = await _productController.GetProductByIdAsync(productId);
+                    selectedProduct = await _productController.GetProductByIdAsync(productId);
                 }
                 catch (EntityNotFoundException)
                 {
@@ -279,7 +279,7 @@ namespace PL.UI
                     return;
                 }
 
-                int quantity = GetIntInput($"Enter quantity (max {product.Quantity}): ", 1, product.Quantity);
+                int quantity = GetIntInput($"Enter quantity (max {selectedProduct.Quantity}): ", 1, selectedProduct.Quantity);
 
                 // Create order item
                 var itemDto = new OrderItemDto
@@ -287,7 +287,7 @@ namespace PL.UI
                     OrderId = orderId,
                     ProductId = productId,
                     Quantity = quantity,
-                    Price = product.Price
+                    Price = selectedProduct.Price
                 };
 
                 // Add item to order
@@ -310,7 +310,6 @@ namespace PL.UI
 
             PressAnyKeyToContinue();
         }
-
         private async Task UpdateOrderItemQuantityAsync()
         {
             DisplayHeader("Update Order Item Quantity");

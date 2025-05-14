@@ -1,5 +1,5 @@
 ﻿using BLL.Interfaces;
-using BLL.Mapping;
+using BLL.Mappings;
 using BLL.Services;
 using DAL;
 using DAL.Interfaces;
@@ -26,6 +26,7 @@ namespace BLL
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IOrderItemService, OrderItemService>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             // Register AutoMapper
             services.AddAutoMapper(typeof(MappingProfile));
