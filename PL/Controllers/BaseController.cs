@@ -1,7 +1,6 @@
 ﻿using BLL.DTOs;
 using BLL.Interfaces;
 using System.Reflection;
-
 namespace PL.Controllers
 {
     /// <summary>
@@ -10,12 +9,10 @@ namespace PL.Controllers
     public abstract class BaseController
     {
         protected readonly IServiceProvider _serviceProvider;
-
         public BaseController(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
         }
-
         /// <summary>
         /// Gets a service from the DI container
         /// </summary>
@@ -24,7 +21,6 @@ namespace PL.Controllers
             return _serviceProvider.GetService(typeof(T)) as T
                 ?? throw new InvalidOperationException($"Service {typeof(T).Name} not found in the container.");
         }
-
         /// <summary>
         /// Checks if an entity with the given ID exists
         /// </summary>
@@ -33,13 +29,10 @@ namespace PL.Controllers
             // Find the appropriate service to check existence
             Type serviceType = GetServiceTypeForDto<T>();
             var service = _serviceProvider.GetService(serviceType);
-
             if (service == null)
                 throw new InvalidOperationException($"Service for {typeof(T).Name} not found");
-
             // Find the existence check method
             MethodInfo? existsMethod = null;
-
             if (typeof(T) == typeof(ProductDto))
                 existsMethod = serviceType.GetMethod("GetProductByIdAsync");
             else if (typeof(T) == typeof(UserDto))
@@ -48,7 +41,6 @@ namespace PL.Controllers
                 existsMethod = serviceType.GetMethod("GetOrderByIdAsync");
             else if (typeof(T) == typeof(OrderItemDto))
                 existsMethod = serviceType.GetMethod("IsOrderItemExistsAsync");
-
             if (existsMethod == null)
                 throw new InvalidOperationException($"Existence check method for {typeof(T).Name} not found");
 
@@ -58,18 +50,31 @@ namespace PL.Controllers
                 return await (Task<bool>)existsMethod.Invoke(service, new object[] { id })!;
             }
 
-            // For other Get methods, they return the entity or throw an exception
+            // For other Get methods, they return the entity or null
             try
             {
-                var result = await (Task)existsMethod.Invoke(service, new object[] { id })!;
-                return result != null;
+                // Check the return type of the method
+                Type returnType = existsMethod.ReturnType;
+
+                if (returnType == typeof(Task))
+                {
+                    // Method returns Task (void)
+                    await (Task)existsMethod.Invoke(service, new object[] { id })!;
+                    return true; // If no exception was thrown, assume it exists
+                }
+                else
+                {
+                    // Method returns Task<T>
+                    dynamic task = existsMethod.Invoke(service, new object[] { id })!;
+                    var result = await task;
+                    return result != null;
+                }
             }
             catch
             {
                 return false;
             }
         }
-
         /// <summary>
         /// Gets the service type for a given DTO type
         /// </summary>
