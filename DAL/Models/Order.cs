@@ -13,6 +13,6 @@ namespace DAL.Models
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
         public User User { get; set; } = null!;
-        public ICollection<OrderItem> Items { get; set; } = new List<OrderItem>();
+        public List<OrderItem> Items { get; set; } = new List<OrderItem>();
     }
 }
