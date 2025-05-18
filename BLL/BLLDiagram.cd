@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BLL.DTOs.OrderDto" Collapsed="true">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAQCAAAASAAAAgAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dtos\OrderDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.DTOs.OrderItemDto" Collapsed="true">
+    <Position X="18" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIACAAAAAQAAAAAAAAAAAAAAAAAAQAAAAAAAgAAIAAA=</HashCode>
+      <FileName>Dtos\OrderItemDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.DTOs.ProductDto" Collapsed="true">
+    <Position X="16.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAgAAAAAAAAAAQAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Dtos\ProductDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.DTOs.UserDto" Collapsed="true">
+    <Position X="14.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAIAAESAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Dtos\UserDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Mappings.MappingProfile" Collapsed="true">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappings\MappingProfile .cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Services.OrderItemService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAQAQAABAAAAAAQwABAAAAAAAUACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\OrderItemService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BLL.Services.OrderService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAQAEEACAAAAwgABAAAAAAAAAAQAAiAAACAAAAA=</HashCode>
+      <FileName>Services\OrderService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BLL.Services.ProductService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAIAAAAAAAAgkJAAAAEAAAAAAAQAEAAAAAAAA=</HashCode>
+      <FileName>Services\ProductService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BLL.Services.UserService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAEAQAAAgABAACAAAABABAACAAAAEQAAAA=</HashCode>
+      <FileName>Services\UserService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BLL.Exceptions.BusinessLogicException" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Exceptions.EntityNotFoundException" Collapsed="true">
+    <Position X="12" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Exceptions.InvalidOperationBusinessException" Collapsed="true">
+    <Position X="3" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Exceptions.ValidationException" Collapsed="true">
+    <Position X="5.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Exceptions.InsufficientStockException" Collapsed="true">
+    <Position X="7.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Exceptions.UnauthorizedOperationException" Collapsed="true">
+    <Position X="9.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.ServiceCollectionExtensions" Collapsed="true">
+    <Position X="19.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServiceCollectionExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="BLL.Interfaces.IOrderItemService" Collapsed="true">
+    <Position X="14.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAABAAAAAAQQAAAAAAAAAUACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IOrderItemService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BLL.Interfaces.IOrderService" Collapsed="true">
+    <Position X="16.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAEAACAAAAgAAAAAAAAAAAAAQAAiAAACAAAAA=</HashCode>
+      <FileName>Interfaces\IOrderService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BLL.Interfaces.IProductService" Collapsed="true">
+    <Position X="18" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAIAAAAAAAAAkIAAAAEAAAAAAAQAEAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IProductService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BLL.Interfaces.IUserService" Collapsed="true">
+    <Position X="19.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAQAAAAAAAACAAAABABAACAAAAEQAAAA=</HashCode>
+      <FileName>Interfaces\IUserService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

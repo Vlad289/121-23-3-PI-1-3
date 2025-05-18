@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PL.Controllers.BaseController" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAIAAAAAAAAAAAAAAAAAAAABAEA=</HashCode>
+      <FileName>Controllers\BaseController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PL.Controllers.OrderController" Collapsed="true">
+    <Position X="4.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAEAACAAAAgAAAAAAAAAAAAAQAAiAAACAAAAA=</HashCode>
+      <FileName>Controllers\OrderController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PL.Controllers.OrderItemController" Collapsed="true">
+    <Position X="6.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAABAAAAAAQQAAAAAAAAAUACAAAEAAAAAAAAA=</HashCode>
+      <FileName>Controllers\OrderItemController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PL.Controllers.ProductController" Collapsed="true">
+    <Position X="9" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAQAIAAAAACAAAkIAAAAEAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ProductController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PL.Controllers.UserController" Collapsed="true">
+    <Position X="2.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAQAAAAAAAACAAAABABAACAAEAEQAAAA=</HashCode>
+      <FileName>Controllers\UserController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PL.UI.BaseUI" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACgEAsAARAAAAAAAAAAADAAA=</HashCode>
+      <FileName>UI\BaseUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PL.UI.OrderUI" Collapsed="true">
+    <Position X="4.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAQAQEAACIAQAAAAQAAAAAAAAAAAAAiAAAACBQAQ=</HashCode>
+      <FileName>UI\OrderUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PL.UI.ProductUI" Collapsed="true">
+    <Position X="9" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAQIAAAAAAQEAgAAAAAAAAAgAAAQQAAAAIBAAA=</HashCode>
+      <FileName>UI\ProductUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PL.UI.UserUI" Collapsed="true">
+    <Position X="2.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAQAACAAAgBABAAAAABAEQBAAA=</HashCode>
+      <FileName>UI\UserUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PL.Program" Collapsed="true">
+    <Position X="11" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PL.MainMenu" Collapsed="true">
+    <Position X="6.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAFAwAAAAAAAAABAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
